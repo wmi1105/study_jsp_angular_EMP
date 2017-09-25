@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.MemberMapper">
+
+	<select id="loginChk" resultType="org.emp.dto.CustomerDTO">
+		SELECT * FROM MEMBER WHERE ID =
+		#{param1} AND PW = #{param2}
+	</select>
+
+	<insert id="checkIn">
+		insert into TBL_CHECK(mid, checkIn) values(${param1}, now())
+	</insert>
+
+	<insert id="checkOut">
+		insert into TBL_CHECK(mid, checkOut) values(${param1}, now())
+	</insert>
+
+</mapper>
