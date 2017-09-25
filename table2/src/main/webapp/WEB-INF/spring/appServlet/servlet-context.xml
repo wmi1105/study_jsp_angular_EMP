@@ -32,12 +32,36 @@
 		</beans:constructor-arg>
 	</beans:bean>
 	
+	<!-- 인터셉터 -->
+	<beans:bean id="authInterceptor" class="org.zerock.interceptor.AuthInterceptor"></beans:bean>
+
+	<beans:bean id="loginInterceptor" class="org.zerock.interceptor.LoginInterceptor"></beans:bean>
+
+	<interceptors>
+		<interceptor>
+		<mapping path="/include/loginPost"/>
+		<beans:ref bean="loginInterceptor"/>
+		</interceptor>
+		
+		<!-- 로그인하지 않은 사용자가 접근하게 되면 사용자는 로그인 페이지를 보게 된다.  -->
+		<interceptor>
+		<mapping path="/include/index"/>
+		<mapping path="/sboard/list"/>
+			<mapping path="/sboard/register"/>
+			<mapping path="/sboard/modifyPage"/>
+			<mapping path="/sboard/removePage"/>
+			<beans:ref bean="authInterceptor"/>
+		</interceptor>
+		
+	</interceptors>	
+	
+	
+	
+	
+		
 	
 
 	<context:component-scan base-package="org.zerock.controller" />
-	
-	
-	
 	
 	
 </beans:beans>

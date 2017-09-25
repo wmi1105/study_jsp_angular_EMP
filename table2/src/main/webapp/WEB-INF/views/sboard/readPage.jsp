@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@include file="../include/index.jsp"%>
 <!-- getFileInfo() js파일  -->
 <script type="text/javascript" src="/resources/js/upload.js"></script>
@@ -67,8 +67,10 @@
 				<!-- /.box-body -->
                      <ul class="mailbox-attachments clearfix uploadedList"></ul>
 				<div class="box-footer">
+				<c:if test="${login.MID == boardVO.writer}">
 			   <button type="submit" class="btn btn-warning" id="modifyBtn">Modify</button>
 			   <button type="submit" class="btn btn-danger" id="removeBtn">REMOVE</button>
+			   </c:if>
 			   <button type="submit" class="btn btn-primary" id="goListBtn">GO LIST </button>
 			 </div>
 
@@ -87,7 +89,7 @@
 	<!-- /.row -->
 </section>
 <!-- /.content -->
-</div>
+
 <!-- /.content-wrapper -->
 
 <script id="templateAttach" type="text/x-handlebars-template">

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -40,7 +39,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/sboard/list">About</a>
+              <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Services</a>
@@ -54,16 +53,15 @@
     </nav>
 
     <!-- Header -->
-      
+      <form action="/include/loginPost" method="post">
     <header class="intro-header">
-    <form action="/include/logout" method="get">
       <div class="container">
         <div class="intro-message">
-	        <ul><c:out value="${login.MNAME }"/></ul>
-		        
-		
-		          <ul><button type="submit" class="btn btn-primary btn-block btn-flat" >Logout</button></ul>
-	          
+	        
+	    <ul><input type="text" name="MID" id="MID" placeholder="Id" style="background-color:#D8D8D8;"/></ul>
+        <ul><input type="password" name="MPW" id="MPW" placeholder="Password" style="background-color:#D8D8D8;"/></ul>
+        <ul><button type="submit" class="btn btn-primary btn-block btn-flat" >Login</button></ul>
+	        
 	          
 	       
           <!-- <h1>Landing Page</h1>
@@ -91,7 +89,7 @@
           </ul> -->
         </div>
       </div>
-      </form>
+        </form>
     </header>
 
 

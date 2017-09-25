@@ -20,6 +20,9 @@
 		<level value="info" />
 	</logger>
 	
+		<logger name="org.zerock.interceptor">
+		<level value="info" />
+	</logger>
 	<logger name="org.springframework.beans">
 		<level value="info" />
 	</logger>
@@ -34,7 +37,7 @@
 
 	<!-- Root Logger -->
 	<root>
-		<priority value="warn" />
+		<priority value="info" />
 		<appender-ref ref="console" />
 	</root>
 	
