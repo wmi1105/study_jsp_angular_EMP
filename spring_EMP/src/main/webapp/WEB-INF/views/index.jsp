@@ -19,12 +19,18 @@
 
     <!-- Custom styles for this template -->
     <link href="resources/css/landing-page.css" rel="stylesheet">
+<<<<<<< HEAD
 
   </head>
 
   <body>
 
     <!-- Navigation -->
+=======
+</head>
+<body>
+<!-- Navigation -->
+>>>>>>> parent of 064d1e7... pom.xml, root-servlet.mxl 적용
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">Start Bootstrap</a>

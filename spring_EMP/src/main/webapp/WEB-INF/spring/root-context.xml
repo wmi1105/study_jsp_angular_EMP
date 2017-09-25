@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+<<<<<<< HEAD
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
 	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
@@ -11,9 +12,9 @@
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
-		<property name="url" value="jdbc:log4jdbc:mysql://emp.cjfy5rc33sd7.us-east-2.rds.amazonaws.com:3306/db_emp"></property>
+		<property name="url" value="jdbc:log4jdbc:mysql://127.0.0.1:3306/db_emp"></property>
 		<property name="username" value="emp"></property>
-		<property name="password" value="emppassword"></property>
+		<property name="password" value="emp"></property>
 	</bean>
 	
 		<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
