@@ -5,7 +5,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="org.zerock.mapper.MemberMapper">
 
-
+ <insert id="create">
+ insert into tbl_member (MPW,MNAME,MIMG,MDP,MPHONE,MMAIL) 
+ values(#{MPW},#{MNAME},#{MIMG},#{MDP},#{MPHONE},#{MMAIL})
+ </insert>
 
 <select id="login" resultType="MemberVO">
 select MID, MPW, MNAME, MIMG, MDP, MPHONE, MMAIL from tbl_member where MID = #{MID} and MPW = #{MPW}
