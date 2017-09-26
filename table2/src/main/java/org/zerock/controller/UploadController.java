@@ -56,7 +56,7 @@ public class UploadController {
 	
 	private String uploadFile(String originalName, byte[] fileData) throws Exception {
 
-		//UUID 중복되지 않는 고유한 키 값을 설정할 때 사용
+		//UUID 以묐났�릺吏� �븡�뒗 怨좎쑀�븳 �궎 媛믪쓣 �꽕�젙�븷 �븣 �궗�슜
 	    UUID uid = UUID.randomUUID();
 
 	    String savedName = uid.toString() + "_" + originalName;
@@ -87,7 +87,7 @@ public class UploadController {
 	    		                file.getBytes()), 
 	    		          HttpStatus.CREATED);
 	  }
-	 //전송된 파일 화면에 나타내기
+	 //�쟾�넚�맂 �뙆�씪 �솕硫댁뿉 �굹���궡湲�
 	 @ResponseBody
 	  @RequestMapping("/displayFile")
 	  public ResponseEntity<byte[]>  displayFile(String fileName)throws Exception{
@@ -114,7 +114,7 @@ public class UploadController {
 	        fileName = fileName.substring(fileName.indexOf("_")+1);       
 	        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM); 
 	        headers.add("Content-Disposition", "attachment; filename=\""+ 
-	          new String(fileName.getBytes("UTF-8"), "ISO-8859-1")+"\""); //한글처리
+	          new String(fileName.getBytes("UTF-8"), "ISO-8859-1")+"\""); //�븳湲�泥섎━
 	      }
 
 	        entity = new ResponseEntity<byte[]>(IOUtils.toByteArray(in), 
@@ -128,7 +128,7 @@ public class UploadController {
 	    }
 	      return entity;    
 	  }
-	  //첨부파일 삭제
+	  //泥⑤��뙆�씪 �궘�젣
 	  @ResponseBody
 	  @RequestMapping(value="/deleteFile", method=RequestMethod.POST)
 	  public ResponseEntity<String> deleteFile(String fileName){

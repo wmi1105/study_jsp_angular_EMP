@@ -56,10 +56,6 @@
 	</interceptors>	
 	
 	
-	
-	
-		
-	
 
 	<context:component-scan base-package="org.zerock.controller" />
 	
