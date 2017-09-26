@@ -33,4 +33,10 @@ public class MemberServiceImpl implements MemberService {
 		return dao.checkMemberWithSessionKey(value);
 	}
 
+	@Override
+	public void regist(MemberVO member) throws Exception {
+		// TODO Auto-generated method stub
+		dao.create(member);
+	}
+
 }

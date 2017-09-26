@@ -40,7 +40,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/sboard/list">About</a>
+              <a class="nav-link" href="/sboard/list">글쓰기</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Services</a>

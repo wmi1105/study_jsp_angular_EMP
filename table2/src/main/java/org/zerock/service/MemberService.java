@@ -6,7 +6,7 @@ import org.zerock.domain.MemberVO;
 import org.zerock.dto.LoginDTO;
 
 public interface MemberService {
-	
+	public void regist(MemberVO member) throws Exception;
 	public MemberVO login(LoginDTO dto) throws Exception;
 	
 	public void keepLogin(Integer MID, String sessionId, Date next)throws Exception;

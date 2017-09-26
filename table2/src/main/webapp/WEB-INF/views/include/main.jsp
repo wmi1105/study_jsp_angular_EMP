@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
-    <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />\
+    <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
        <link href="/resources/vendor/bootstrap/css/landing-page.css" rel="stylesheet">
@@ -21,7 +21,13 @@
     <script src="/resources/vendor/jquery/jquery.min.js"></script>
 <title>main page</title>
 
+ <script>
+	var result = '${msg}';
 
+	if (result == 'SUCCESS') {
+		alert("아이디는: ${MID}입니다.");
+	}
+</script>
 
 
 </head>
@@ -39,7 +45,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="/sboard/list">글쓰기</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Services</a>
@@ -61,7 +67,8 @@
 	    <ul><input type="text" name="MID" id="MID" placeholder="Id" style="background-color:#D8D8D8;"/></ul>
         <ul><input type="password" name="MPW" id="MPW" placeholder="Password" style="background-color:#D8D8D8;"/></ul>
         <ul><button type="submit" class="btn btn-primary btn-block btn-flat" >Login</button></ul>
-	        
+	        </form>
+	        <ul> <a href="/include/mregister">등록하기</a></ul>
 	          
 	       
           <!-- <h1>Landing Page</h1>
@@ -89,7 +96,7 @@
           </ul> -->
         </div>
       </div>
-        </form>
+       
     </header>
 
 

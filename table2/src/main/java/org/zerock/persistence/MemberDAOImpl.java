@@ -45,6 +45,12 @@ public class MemberDAOImpl implements MemberDAO {
 		return session.selectOne(namespace +".checkUserWithSessionKey", value);
 	}
 
+	@Override
+	public void create(MemberVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		session.insert(namespace + ".create", vo);
+	}
+
 
 
 	
