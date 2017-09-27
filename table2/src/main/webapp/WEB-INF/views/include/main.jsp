@@ -21,15 +21,6 @@
     <script src="/resources/vendor/jquery/jquery.min.js"></script>
 <title>main page</title>
 
- <script>
-	var result = '${msg}';
-
-	if (result == 'SUCCESS') {
-		alert("아이디는: ${MID}입니다.");
-	}
-</script>
-
-
 </head>
 
 
@@ -42,7 +33,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <!-- <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="/sboard/list">글쓰기</a>
@@ -54,7 +45,7 @@
               <a class="nav-link" href="#">Contact</a>
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </nav>
 
@@ -66,9 +57,19 @@
 	        
 	    <ul><input type="text" name="MID" id="MID" placeholder="Id" style="background-color:#D8D8D8;"/></ul>
         <ul><input type="password" name="MPW" id="MPW" placeholder="Password" style="background-color:#D8D8D8;"/></ul>
+        <hr class="intro-divider">
+         <ul class="list-inline intro-social-buttons">
+                <li class="list-inline-item">
+              <button type="submit" class="btn btn-primary btn-block btn-flat" >Login</button>
+            </li>
+            <li class="list-inline-item">
+             <button type="button" onClick="location.href='/include/mregister'"class="btn btn-primary btn-block btn-flat" >Join</button>
+            </li>
+            </ul>
+        <!-- 
         <ul><button type="submit" class="btn btn-primary btn-block btn-flat" >Login</button></ul>
 	        </form>
-	        <ul> <a href="/include/mregister">등록하기</a></ul>
+	        <ul> <a href="/include/mregister">등록하기</a></ul> -->
 	          
 	       
           <!-- <h1>Landing Page</h1>
