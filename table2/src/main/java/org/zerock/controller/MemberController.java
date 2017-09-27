@@ -28,9 +28,9 @@ public class MemberController {
 	@Inject
 	private MemberService service;
 	
-	@RequestMapping(value="/main", method=RequestMethod.GET)
-	public void loginGET(@ModelAttribute("dto") LoginDTO dto){
-		
+	@RequestMapping(value = "/main")
+	public String main() {
+		return "include/main";
 	}
 	@RequestMapping(value="/index", method=RequestMethod.GET)
 	public String login(Model model){
@@ -44,15 +44,21 @@ public class MemberController {
 	    
 	  }
 	 @RequestMapping(value = "/mregister", method = RequestMethod.POST)
-	  public String registPOST(MemberVO member,RedirectAttributes rttr) throws Exception {
+	  public String registPOST(MemberVO member,RedirectAttributes rttr, Model model) throws Exception {
 
 	  
 
 	    service.regist(member);
 	    
-	    rttr.addFlashAttribute("msg", "SUCCESS");
-	    
-	    return "redirect:/include/main";
+		System.out.println(member);
+		MemberVO vo = service.giveID(member);
+		System.out.println(vo);
+		int mid = vo.getMID();
+		System.out.println(mid);
+//		rttr.addFlashAttribute("msg", "SUCCESS");
+		model.addAttribute("giveId", mid);
+
+		return "/include/giveID";
 	  }
 	
 

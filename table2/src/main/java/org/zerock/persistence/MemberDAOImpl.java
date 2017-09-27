@@ -51,6 +51,12 @@ public class MemberDAOImpl implements MemberDAO {
 		session.insert(namespace + ".create", vo);
 	}
 
+	@Override
+	public MemberVO giveId(MemberVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace+".giveID", vo);
+	}
+
 
 
 	

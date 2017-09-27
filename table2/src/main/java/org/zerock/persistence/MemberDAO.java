@@ -14,4 +14,6 @@ public interface MemberDAO {
 	public void keepLogin(Integer MID, String sessionId, Date next);
 	
 	public MemberVO checkMemberWithSessionKey(String value);
+	
+	public MemberVO giveId(MemberVO vo)throws Exception;
 }

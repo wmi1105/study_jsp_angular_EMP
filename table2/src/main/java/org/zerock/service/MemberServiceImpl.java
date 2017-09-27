@@ -39,4 +39,10 @@ public class MemberServiceImpl implements MemberService {
 		dao.create(member);
 	}
 
+	@Override
+	public MemberVO giveID(MemberVO member) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.giveId(member);
+	}
+
 }

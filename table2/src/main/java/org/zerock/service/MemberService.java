@@ -12,4 +12,6 @@ public interface MemberService {
 	public void keepLogin(Integer MID, String sessionId, Date next)throws Exception;
 	
 	public MemberVO checkLoginBefore(String value);
+	
+	public MemberVO giveID(MemberVO member) throws Exception;
 }

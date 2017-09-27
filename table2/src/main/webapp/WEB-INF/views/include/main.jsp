@@ -21,11 +21,11 @@
     <script src="/resources/vendor/jquery/jquery.min.js"></script>
 <title>main page</title>
 
- <script>
+  <script>
 	var result = '${msg}';
 
 	if (result == 'SUCCESS') {
-		alert("아이디는: ${MID}입니다.");
+		alert("아이디는: [${giveId}] 입니다.");
 	}
 </script>
 
@@ -48,7 +48,7 @@
               <a class="nav-link" href="/sboard/list">글쓰기</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
+              <a class="nav-link" href="#">내정보</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
