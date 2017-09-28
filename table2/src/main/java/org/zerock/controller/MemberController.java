@@ -70,7 +70,7 @@ public class MemberController {
 
 		MemberVO vo = service.login(dto);
 
-		System.out.println("index"+vo);
+		System.out.println("index" + vo);
 		if (vo == null) {
 			return;
 
@@ -80,9 +80,7 @@ public class MemberController {
 		if (dto.isUseCookie()) {
 
 			int amount = 60 * 60 * 24 * 7;
-
 			Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount));
-
 			service.keepLogin(vo.getMID(), session.getId(), sessionLimit);
 		}
 	}
