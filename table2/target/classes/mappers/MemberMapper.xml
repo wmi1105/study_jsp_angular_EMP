@@ -18,20 +18,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 	<select id="login" resultType="MemberVO">
-		select MID, MPW, MNAME, MIMG, MDP,
-		MPHONE, MMAIL from tbl_member where MID =
+		select MID, MPW, MNAME, MIMG, MDP, MPHONE, MMAIL from tbl_member where MID =
 		#{MID} and MPW = #{MPW}
 	</select>
 
 	<update id="keepLogin">
-		update tbl_member set sessionkey =#{sessionId},
-		sessionlimit =#{next} where
+		update tbl_member set sessionkey =#{sessionId}, sessionlimit =#{next} where
 		MID =#{MID}
 	</update>
 
 	<select id="checkUserWithSessionKey" resultType="MemberVO">
-		select * from
-		tbl_member where sessionkey = #{value} and sessionlimit >
+		select * from tbl_member where sessionkey = #{value} and sessionlimit >
 		now()
 	</select>
 
@@ -49,7 +46,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update tbl_check set CHECKOUT=curtime() where
 		mid=#{mid} and checkdate=curdate();
 	</update>
-	
+
 	<select id="checkOutTime" resultType="CheckVO">
 		select checkOut from
 		tbl_check where MID = #{mid} and CHECKDATE=curdate()+'%'

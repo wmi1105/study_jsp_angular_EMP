@@ -70,6 +70,7 @@ public class MemberController {
 
 		MemberVO vo = service.login(dto);
 
+		System.out.println(vo);
 		if (vo == null) {
 			return;
 
