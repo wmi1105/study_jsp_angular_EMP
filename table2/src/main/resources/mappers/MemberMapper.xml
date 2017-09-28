@@ -16,6 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		MNAME = #{MNAME} and MIMG = #{MIMG}
 	</select>
 
+
 	<select id="login" resultType="MemberVO">
 		select MID, MPW, MNAME, MIMG, MDP, MPHONE, MMAIL from tbl_member where MID =
 		#{MID} and MPW = #{MPW}

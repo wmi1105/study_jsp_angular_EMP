@@ -1,7 +1,5 @@
 package org.zerock.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
-
 import java.util.Date;
 
 import javax.inject.Inject;
@@ -18,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.WebUtils;
-import org.zerock.domain.BoardVO;
 import org.zerock.domain.CheckVO;
 import org.zerock.domain.MemberVO;
 import org.zerock.dto.LoginDTO;
@@ -70,7 +67,7 @@ public class MemberController {
 
 		MemberVO vo = service.login(dto);
 
-		System.out.println("index" + vo);
+		System.out.println("index: " + vo);
 		if (vo == null) {
 			return;
 
