@@ -55,6 +55,7 @@ select * from tbl_member where sessionkey = #{value} and sessionlimit > now()
 		now()
 	</select>
 
+
 	<insert id="checkIn">
 		insert into tbl_check(mid, checkin, checkdate)
 		values(#{mid}, curtime(), curdate());
