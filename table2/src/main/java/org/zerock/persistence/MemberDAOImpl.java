@@ -57,11 +57,17 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public void checkIn(String mname) throws Exception {
+	public CheckVO checkIn(int mid) throws Exception {
 		// TODO Auto-generated method stub
-		session.insert(namespace+".checkIn", mname);
-		
-		session.selectOne(namespace+".checkInTime", mname);
+		session.insert(namespace+".checkIn", mid);
+		return session.selectOne(namespace+".checkInTime", mid);
+	}
+
+	@Override
+	public CheckVO checkOut(int mid) throws Exception {
+		// TODO Auto-generated method stub
+		session.update(namespace+".checkOut",mid);
+		return session.selectOne(namespace+".checkOutTime", mid);
 	}
 
 }

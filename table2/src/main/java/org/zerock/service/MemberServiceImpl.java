@@ -47,8 +47,14 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public void checkIn(String mname) throws Exception {
+	public CheckVO checkIn(int mid) throws Exception {
 		// TODO Auto-generated method stub
-		dao.checkIn(mname);
+		return dao.checkIn(mid);
+	}
+
+	@Override
+	public CheckVO checkOut(int mid) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.checkOut(mid);
 	}
 }

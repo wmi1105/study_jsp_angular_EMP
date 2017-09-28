@@ -19,6 +19,8 @@ public interface MemberDAO {
 
 	public MemberVO giveId(MemberVO vo) throws Exception;
 
-	public void checkIn(String mname) throws Exception;
+	public CheckVO checkIn(int mid) throws Exception;
+	
+	public CheckVO checkOut(int mid) throws Exception;
 
 }

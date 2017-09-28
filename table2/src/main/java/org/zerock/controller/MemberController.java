@@ -1,5 +1,7 @@
 package org.zerock.controller;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+
 import java.util.Date;
 
 import javax.inject.Inject;
@@ -57,7 +59,7 @@ public class MemberController {
 		System.out.println(vo);
 		int mid = vo.getMID();
 		System.out.println(mid);
-//		rttr.addFlashAttribute("msg", "SUCCESS");
+		// rttr.addFlashAttribute("msg", "SUCCESS");
 		model.addAttribute("giveId", mid);
 
 		return "/include/giveID";
@@ -107,15 +109,28 @@ public class MemberController {
 		}
 		return "/include/main";
 	}
-	
-	@RequestMapping(value="/checkIn", method=RequestMethod.GET)
-	public String checkIn(MemberVO member, Model moel,@RequestParam("MNAME") String MNAME)throws Exception{
-		
-		System.out.println(MNAME);
-//		service.checkIn(MNAME);
-		
-		return "redirect:/include/index";
-		
+
+	@RequestMapping(value = "/checkIn", method = RequestMethod.GET)
+	public String checkIn(Model model, @RequestParam("MID") int MID) throws Exception {
+
+		System.out.println(MID);
+		CheckVO vo = service.checkIn(MID);
+
+		model.addAttribute("time", vo.getCheckIn());
+		model.addAttribute("state", "출근");
+
+		return "/include/check_suc";
+	}
+
+	@RequestMapping(value = "/checkOut", method = RequestMethod.GET)
+	public String checkOut(Model model, @RequestParam("MID") int MID) throws Exception {
+
+		CheckVO vo = service.checkOut(MID);
+
+		model.addAttribute("time", vo.getCheckOut());
+		model.addAttribute("state", "퇴근");
+
+		return "/include/check_suc";
 	}
 
 }

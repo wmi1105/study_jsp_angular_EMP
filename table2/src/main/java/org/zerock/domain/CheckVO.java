@@ -4,31 +4,31 @@ import java.sql.Timestamp;
 
 public class CheckVO {
 
-	private Timestamp checkIn;
-	private Timestamp checkOut;
-	private Timestamp checkDate;
+	private String checkIn;
+	private String checkOut;
+	private String checkDate;
 
-	public Timestamp getCheckIn() {
+	public String getCheckIn() {
 		return checkIn;
 	}
 
-	public void setCheckIn(Timestamp checkIn) {
+	public void setCheckIn(String checkIn) {
 		this.checkIn = checkIn;
 	}
 
-	public Timestamp getCheckOut() {
+	public String getCheckOut() {
 		return checkOut;
 	}
 
-	public void setCheckOut(Timestamp checkOut) {
+	public void setCheckOut(String checkOut) {
 		this.checkOut = checkOut;
 	}
 
-	public Timestamp getCheckDate() {
+	public String getCheckDate() {
 		return checkDate;
 	}
 
-	public void setCheckDate(Timestamp checkDate) {
+	public void setCheckDate(String checkDate) {
 		this.checkDate = checkDate;
 	}
 

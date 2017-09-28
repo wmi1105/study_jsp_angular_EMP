@@ -70,10 +70,10 @@
 		<hr class="intro-divider">
           <ul class="list-inline intro-social-buttons">
             <li class="list-inline-item">
-              <button type="button" onClick="location.href='/include/checkIn?MNAME=${login.MNAME }'"class="btn btn-primary btn-block btn-flat" >출근</button>
+              <button type="button" onClick="location.href='/include/checkIn?MID=${login.MID}'"class="btn btn-primary btn-block btn-flat" >출근</button>
             </li>
             <li class="list-inline-item">
-              <button type="button" onClick="location.href='/include/checkOut'"class="btn btn-primary btn-block btn-flat" >퇴근</button>
+              <button type="button" onClick="location.href='/include/checkOut?MID=${login.MID}'"class="btn btn-primary btn-block btn-flat" >퇴근</button>
             </li>
             <li class="list-inline-item">
              <button type="button" onClick="location.href='/include/checkDate'"class="btn btn-primary btn-block btn-flat" >내정보</button>

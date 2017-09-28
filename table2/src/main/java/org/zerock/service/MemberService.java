@@ -17,5 +17,7 @@ public interface MemberService {
 
 	public MemberVO checkLoginBefore(String value);
 	
-	public void checkIn(String mname) throws Exception;
+	public CheckVO checkIn(int mid) throws Exception;
+	
+	public CheckVO checkOut(int mid) throws Exception;
 }
