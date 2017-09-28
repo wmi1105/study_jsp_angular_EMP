@@ -37,7 +37,14 @@ function writeCheck() {
          } else if (form.MPW.value != form.confirm.value) {
             alert("비밀번호를 확인해 주세요");
             return form.confirm.focus();
+<<<<<<< HEAD
          } else {
+=======
+         } else if (form.MIMG.value == "") {
+             alert("사진을 등록해 주세요");
+             return form.MIMG.focus();
+          } else {
+>>>>>>> semp
             form.action = "/include/mregister";
             form.method="post";
             form.submit();
@@ -127,7 +134,11 @@ function writeCheck() {
                   </div>
                </div>
                <div class="form-group ">
+<<<<<<< HEAD
                   <input type='file' name='MIMG'>
+=======
+                  <input type='file' name="MIMG">
+>>>>>>> semp
                </div>
 
 
