@@ -32,6 +32,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		now()
 	</select>
 
+
 	<insert id="checkIn">
 		insert into tbl_check(mid, checkin, checkdate)
 		values(#{mid}, curtime(), curdate());
