@@ -30,67 +30,27 @@ public class MemberController {
 
 	@Inject
 	private MemberService service;
-<<<<<<< HEAD
-	
+
 	@RequestMapping(value = "/main")
 	public String main() {
 		return "include/main";
-=======
-
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public void loginGET(@ModelAttribute("dto") LoginDTO dto) {
-
->>>>>>> semp
 	}
 
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String login(Model model) {
-
+	@RequestMapping(value="/main", method=RequestMethod.GET)
+	public void loginGET(@ModelAttribute("dto") LoginDTO dto){
+		
+	}
+	@RequestMapping(value="/index", method=RequestMethod.GET)
+	public String login(Model model){
+		
 		return "/include/index";
 	}
-<<<<<<< HEAD
-	 @RequestMapping(value = "/mregister", method = RequestMethod.GET)
-	  public String registGET() throws Exception {
-		 
-		 return "/include/register";
-	    
-	  }
-	 @RequestMapping(value = "/mregister", method = RequestMethod.POST)
-	  public String registPOST(MemberVO member,RedirectAttributes rttr, Model model) throws Exception {
-
-	  
-
-	    service.regist(member);
-	    
-		System.out.println(member);
-		MemberVO vo = service.giveID(member);
-		System.out.println(vo);
-		int mid = vo.getMID();
-		System.out.println(mid);
-//		rttr.addFlashAttribute("msg", "SUCCESS");
-		model.addAttribute("giveId", mid);
-
-		return "/include/giveID";
-	  }
-	
-
-	
-	@RequestMapping(value="/loginPost", method=RequestMethod.POST)
-	public void loginPOST(LoginDTO dto,HttpSession session,Model model) throws Exception{
-		
-		MemberVO vo=service.login(dto);
-		
-		if(vo==null){
-			return;
-			
-=======
 
 	@RequestMapping(value = "/mregister", method = RequestMethod.GET)
 	public String registGET() throws Exception {
 
 		return "/include/register";
 
->>>>>>> semp
 	}
 
 	@RequestMapping(value = "/mregister", method = RequestMethod.POST)
@@ -109,12 +69,13 @@ public class MemberController {
 		return "/include/giveID";
 	}
 
+
 	@RequestMapping(value = "/loginPost", method = RequestMethod.POST)
 	public void loginPOST(LoginDTO dto, HttpSession session, Model model) throws Exception {
 
 		MemberVO vo = service.login(dto);
 
-		System.out.println("index"+vo);
+		System.out.println("index" + vo);
 		if (vo == null) {
 			return;
 

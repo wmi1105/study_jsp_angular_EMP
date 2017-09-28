@@ -16,16 +16,11 @@ public interface MemberDAO {
 	public void keepLogin(Integer MID, String sessionId, Date next);
 
 	public MemberVO checkMemberWithSessionKey(String value);
-<<<<<<< HEAD
-	
-	public MemberVO giveId(MemberVO vo)throws Exception;
-=======
 
 	public MemberVO giveId(MemberVO vo) throws Exception;
 
 	public CheckVO checkIn(int mid) throws Exception;
-	
+
 	public CheckVO checkOut(int mid) throws Exception;
 
->>>>>>> semp
 }

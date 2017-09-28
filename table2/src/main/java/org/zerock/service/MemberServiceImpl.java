@@ -46,8 +46,6 @@ public class MemberServiceImpl implements MemberService {
 		return dao.giveId(member);
 	}
 
-<<<<<<< HEAD
-=======
 	@Override
 	public CheckVO checkIn(int mid) throws Exception {
 		// TODO Auto-generated method stub
@@ -59,5 +57,4 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		return dao.checkOut(mid);
 	}
->>>>>>> semp
 }

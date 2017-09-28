@@ -53,27 +53,21 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public MemberVO giveId(MemberVO vo) throws Exception {
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
-		return session.selectOne(namespace+".giveID", vo);
-	}
-
-=======
 		return session.selectOne(namespace + ".giveID", vo);
 	}
 
 	@Override
 	public CheckVO checkIn(int mid) throws Exception {
 		// TODO Auto-generated method stub
-		session.insert(namespace+".checkIn", mid);
-		return session.selectOne(namespace+".checkInTime", mid);
+		session.insert(namespace + ".checkIn", mid);
+		return session.selectOne(namespace + ".checkInTime", mid);
 	}
->>>>>>> semp
 
 	@Override
 	public CheckVO checkOut(int mid) throws Exception {
 		// TODO Auto-generated method stub
-		session.update(namespace+".checkOut",mid);
-		return session.selectOne(namespace+".checkOutTime", mid);
+		session.update(namespace + ".checkOut", mid);
+		return session.selectOne(namespace + ".checkOutTime", mid);
 	}
 
 }
