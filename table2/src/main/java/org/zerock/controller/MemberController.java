@@ -11,12 +11,12 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.WebUtils;
-import org.zerock.domain.BoardVO;
+import org.zerock.domain.CheckVO;
 import org.zerock.domain.MemberVO;
 import org.zerock.dto.LoginDTO;
 import org.zerock.service.MemberService;
@@ -27,6 +27,7 @@ public class MemberController {
 	
 	@Inject
 	private MemberService service;
+	
 	
 	@RequestMapping(value = "/main")
 	public String main() {
@@ -107,7 +108,28 @@ public class MemberController {
 	    }
 	    return "/include/main";
 	  }
-	
+	@RequestMapping(value = "/checkIn", method = RequestMethod.GET)
+	   public String checkIn(Model model, @RequestParam("MID") int MID) throws Exception {
+
+	      System.out.println(MID);
+	      CheckVO vo = service.checkIn(MID);
+
+	      model.addAttribute("time", vo.getCheckIn());
+	      model.addAttribute("state", "출근");
+
+	      return "/include/check_suc";
+	   }
+
+	   @RequestMapping(value = "/checkOut", method = RequestMethod.GET)
+	   public String checkOut(Model model, @RequestParam("MID") int MID) throws Exception {
+
+	      CheckVO vo = service.checkOut(MID);
+
+	      model.addAttribute("time", vo.getCheckOut());
+	      model.addAttribute("state", "퇴근");
+
+	      return "/include/check_suc";
+	   }
 	
 	
 

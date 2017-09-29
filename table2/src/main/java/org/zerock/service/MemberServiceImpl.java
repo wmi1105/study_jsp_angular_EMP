@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
+import org.zerock.domain.CheckVO;
 import org.zerock.domain.MemberVO;
 import org.zerock.dto.LoginDTO;
 import org.zerock.persistence.MemberDAO;
@@ -43,6 +44,18 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO giveID(MemberVO member) throws Exception {
 		// TODO Auto-generated method stub
 		return dao.giveId(member);
+	}
+	 //출퇴근
+	@Override
+	public CheckVO checkIn(int MID) throws Exception {
+		// TODO Auto-generated method stub
+		 return dao.checkIn(MID);
+	}
+
+	@Override
+	public CheckVO checkOut(int MID) throws Exception {
+		// TODO Auto-generated method stub
+		 return dao.checkOut(MID);
 	}
 
 }

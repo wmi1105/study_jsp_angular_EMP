@@ -2,6 +2,7 @@ package org.zerock.service;
 
 import java.util.Date;
 
+import org.zerock.domain.CheckVO;
 import org.zerock.domain.MemberVO;
 import org.zerock.dto.LoginDTO;
 
@@ -14,4 +15,8 @@ public interface MemberService {
 	public MemberVO checkLoginBefore(String value);
 	
 	public MemberVO giveID(MemberVO member) throws Exception;
+    //출퇴근
+	public CheckVO checkIn(int MID) throws Exception;
+		
+    public CheckVO checkOut(int MID) throws Exception;
 }

@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+import org.zerock.domain.CheckVO;
 import org.zerock.domain.MemberVO;
 import org.zerock.dto.LoginDTO;
 
@@ -57,7 +58,19 @@ public class MemberDAOImpl implements MemberDAO {
 		return session.selectOne(namespace+".giveID", vo);
 	}
 
-
+	@Override
+	public CheckVO checkIn(int MID) throws Exception {
+		// TODO Auto-generated method stub
+		  session.insert(namespace + ".checkIn", MID);
+	      return session.selectOne(namespace + ".checkInTime", MID);
+	   }
+    //출퇴근
+	@Override
+	public CheckVO checkOut(int MID) throws Exception {
+		// TODO Auto-generated method stub
+		session.update(namespace + ".checkOut", MID);
+	      return session.selectOne(namespace + ".checkOutTime", MID);
+	   }
 
 	
 }

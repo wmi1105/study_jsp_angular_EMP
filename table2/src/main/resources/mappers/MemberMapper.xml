@@ -25,5 +25,26 @@ select MID, MPW, MNAME, MIMG, MDP, MPHONE, MMAIL from tbl_member where MID = #{M
 <select id="checkUserWithSessionKey" resultType="MemberVO">
 select * from tbl_member where sessionkey = #{value} and sessionlimit > now()
 </select>
+
+ <!-- 출퇴근  -->
+<insert id="checkIn">
+      insert into tbl_check(mid, checkin, checkdate)
+      values(#{mid}, curtime(), curdate());
+   </insert>
+
+   <select id="checkInTime" resultType="CheckVO">
+      select checkIn from
+      tbl_check where MID = #{mid} and CHECKDATE=curdate()+'%'
+   </select>
+
+   <update id="checkOut">
+      update tbl_check set CHECKOUT=curtime() where
+      mid=#{mid} and checkdate=curdate();
+   </update>
+
+   <select id="checkOutTime" resultType="CheckVO">
+      select checkOut from
+      tbl_check where MID = #{mid} and CHECKDATE=curdate()+'%'
+   </select>
   
 </mapper>
