@@ -15,7 +15,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Inject
 	private MemberDAO dao;
-	
+
 	@Override
 	public MemberVO login(LoginDTO dto) throws Exception {
 		// TODO Auto-generated method stub
@@ -58,4 +58,15 @@ public class MemberServiceImpl implements MemberService {
 		 return dao.checkOut(MID);
 	}
 
+	@Override
+	public CheckVO checkIn(int mid) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.checkIn(mid);
+	}
+
+	@Override
+	public CheckVO checkOut(int mid) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.checkOut(mid);
+	}
 }
