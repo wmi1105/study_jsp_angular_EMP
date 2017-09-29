@@ -5,7 +5,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="org.zerock.mapper.MemberMapper">
 
-<<<<<<< HEAD
  <insert id="create">
  insert into tbl_member (MPW,MNAME,MIMG,MDP,MPHONE,MMAIL) 
  values(#{MPW},#{MNAME},#{MIMG},#{MDP},#{MPHONE},#{MMAIL})
@@ -48,52 +47,4 @@ select * from tbl_member where sessionkey = #{value} and sessionlimit > now()
       tbl_check where MID = #{mid} and CHECKDATE=curdate()+'%'
    </select>
   
-=======
-	<insert id="create">
-		insert into tbl_member
-		(MPW,MNAME,MIMG,MDP,MPHONE,MMAIL)
-		values(#{MPW},#{MNAME},#{MIMG},#{MDP},#{MPHONE},#{MMAIL})
-	</insert>
-
-	<select id="giveID" resultType="MemberVO">
-		select MID from tbl_member where
-		MNAME = #{MNAME} and MPW = #{MPW}
-	</select>
-
-	<select id="login" resultType="MemberVO">
-		select MID, MPW, MNAME, MIMG, MDP, MPHONE, MMAIL from tbl_member where MID =
-		#{MID} and MPW = #{MPW}
-	</select>
-
-	<update id="keepLogin">
-		update tbl_member set sessionkey =#{sessionId}, sessionlimit =#{next} where
-		MID =#{MID}
-	</update>
-
-	<select id="checkUserWithSessionKey" resultType="MemberVO">
-		select * from tbl_member where sessionkey = #{value} and sessionlimit >
-		now()
-	</select>
-
-	<insert id="checkIn">
-		insert into tbl_check(mid, checkin, checkdate)
-		values(#{mid}, curtime(), curdate());
-	</insert>
-
-	<select id="checkInTime" resultType="CheckVO">
-		select checkIn from
-		tbl_check where MID = #{mid} and CHECKDATE=curdate()+'%'
-	</select>
-
-	<update id="checkOut">
-		update tbl_check set CHECKOUT=curtime() where
-		mid=#{mid} and checkdate=curdate();
-	</update>
-
-	<select id="checkOutTime" resultType="CheckVO">
-		select checkOut from
-		tbl_check where MID = #{mid} and CHECKDATE=curdate()+'%'
-	</select>
-
->>>>>>> origin/master
 </mapper>

@@ -65,15 +65,9 @@
     <form action="/include/logout" method="get">
       <div class="container">
         <div class="intro-message">
-<<<<<<< HEAD
            <ul><c:out value="${login.MNAME }"/></ul>
               
       <hr class="intro-divider">
-=======
-	        <ul><c:out value="${login.MNAME }"/></ul>
-		        
-		<hr class="intro-divider">
->>>>>>> origin/master
           <ul class="list-inline intro-social-buttons">
             <li class="list-inline-item">
               <button type="button" onClick="location.href='/include/checkIn?MID=${login.MID}'"class="btn btn-primary btn-block btn-flat" >출근</button>
@@ -87,17 +81,10 @@
              <button type="submit" class="btn btn-primary btn-block btn-flat">Logout</button>
             </li>
           </ul>
-<<<<<<< HEAD
                 <!-- <ul><button type="submit" class="btn btn-primary btn-block btn-flat">Logout</button></ul> -->
              
              
           
-=======
-		          <!-- <ul><button type="submit" class="btn btn-primary btn-block btn-flat">Logout</button></ul> -->
-	          
-	          
-	       
->>>>>>> origin/master
           <!-- <h1>Landing Page</h1>
           <h3>A Template by Start Bootstrap</h3>
           <hr class="intro-divider">

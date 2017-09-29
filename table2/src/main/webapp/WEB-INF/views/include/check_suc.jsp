@@ -7,16 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<<<<<<< HEAD
 
 <script>
    alert("${state} : ${time}");
    document.location.href="/include/index";
-=======
-<script>
-	alert("${state} : ${time}");
-	document.location.href="/include/index";
->>>>>>> origin/master
 </script>
 </body>
 </html>
