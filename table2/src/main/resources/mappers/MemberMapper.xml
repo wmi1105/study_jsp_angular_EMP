@@ -47,4 +47,5 @@ select * from tbl_member where sessionkey = #{value} and sessionlimit > now()
       tbl_check where MID = #{mid} and CHECKDATE=curdate()+'%'
    </select>
   
+  
 </mapper>

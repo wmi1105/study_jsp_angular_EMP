@@ -22,6 +22,7 @@
         <p class="copyright text-muted small">Copyright &copy; Your Company 2017. All Rights Reserved</p>
       </div>
     </footer>
+    
 
     <script src="/resources/vendor/jquery/jquery.min.js"></script>
     <script src="/resources/vendor/popper/popper.min.js"></script>

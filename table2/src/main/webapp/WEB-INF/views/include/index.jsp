@@ -8,11 +8,11 @@
 <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
      
-    <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />\
+    <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
        <link href="/resources/vendor/bootstrap/css/landing-page.css" rel="stylesheet">
-       
+         <script src="/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
        <!-- Font Awesome Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Ionicons -->
@@ -49,15 +49,14 @@
               <a class="nav-link" href="/sboard/list">글쓰기</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">내정보</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="/include/memberinfo">내정보</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+    </div>
+    
 
     <!-- Header -->
       
@@ -76,7 +75,7 @@
               <button type="button" onClick="location.href='/include/checkOut?MID=${login.MID}'"class="btn btn-primary btn-block btn-flat" >퇴근</button>
             </li>
             <li class="list-inline-item">
-             <button type="button" onClick="location.href='/include/checkDate'"class="btn btn-primary btn-block btn-flat" >내정보</button>
+             <button type="button" onClick="location.href='/include/memberinfo'"class="btn btn-primary btn-block btn-flat">내정보</button>
             </li><li class="list-inline-item">
              <button type="submit" class="btn btn-primary btn-block btn-flat">Logout</button>
             </li>
@@ -111,5 +110,7 @@
         </div>
       </div>
       </form>
+  
+      
     </header>
 

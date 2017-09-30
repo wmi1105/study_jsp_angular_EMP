@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.WebUtils;
 import org.zerock.domain.CheckVO;
 import org.zerock.domain.MemberVO;
+import org.zerock.domain.SearchCriteria;
 import org.zerock.dto.LoginDTO;
 import org.zerock.service.MemberService;
 
@@ -37,6 +39,12 @@ public class MemberController {
 	public String login(Model model){
 		
 		return "/include/index";
+	}
+	
+	@RequestMapping(value="/memberinfo", method=RequestMethod.GET)
+	public void memberinfo(Model model){
+		
+		
 	}
 	 @RequestMapping(value = "/mregister", method = RequestMethod.GET)
 	  public String registGET() throws Exception {
@@ -130,7 +138,8 @@ public class MemberController {
 
 	      return "/include/check_suc";
 	   }
-	
+	   
+	  
 	
 
 }

@@ -48,7 +48,7 @@
               <a class="nav-link" href="/sboard/list">글쓰기</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">내정보</a>
+              <a class="nav-link" href="/include/memberinfo">내정보</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>

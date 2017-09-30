@@ -21,4 +21,6 @@ public interface MemberDAO {
     public CheckVO checkIn(int MID) throws Exception;
 	
 	public CheckVO checkOut(int MID) throws Exception;
+	
+	
 }

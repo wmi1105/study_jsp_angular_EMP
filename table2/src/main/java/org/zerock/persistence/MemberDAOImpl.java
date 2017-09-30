@@ -57,7 +57,8 @@ public class MemberDAOImpl implements MemberDAO {
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace+".giveID", vo);
 	}
-
+	
+	
 	@Override
 	public CheckVO checkIn(int MID) throws Exception {
 		// TODO Auto-generated method stub
@@ -71,6 +72,8 @@ public class MemberDAOImpl implements MemberDAO {
 		session.update(namespace + ".checkOut", MID);
 	      return session.selectOne(namespace + ".checkOutTime", MID);
 	   }
+
+
 
 	
 }
