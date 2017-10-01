@@ -1,6 +1,7 @@
 package org.zerock.service;
 
 import java.util.Date;
+import java.util.List;
 
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.CheckVO;
@@ -22,5 +23,5 @@ public interface MemberService {
 		
     public CheckVO checkOut(int MID) throws Exception;
     
-    
+    public List<CheckVO> checkInfo(int MID) throws Exception;
 }

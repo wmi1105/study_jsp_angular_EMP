@@ -1,38 +1,41 @@
 package org.zerock.domain;
 
+import java.sql.Date;
+import java.sql.Time;
+
 public class CheckVO {
 
-	private String checkIn;
-	   private String checkOut;
-	   private String checkDate;
+	private Time checkIn;
+	private Time checkOut;
+	private Date checkDate;
 
-	   public String getCheckIn() {
-	      return checkIn;
-	   }
+	public Time getCheckIn() {
+		return checkIn;
+	}
 
-	   public void setCheckIn(String checkIn) {
-	      this.checkIn = checkIn;
-	   }
+	public void setCheckIn(Time checkIn) {
+		this.checkIn = checkIn;
+	}
 
-	   public String getCheckOut() {
-	      return checkOut;
-	   }
+	public Time getCheckOut() {
+		return checkOut;
+	}
 
-	   public void setCheckOut(String checkOut) {
-	      this.checkOut = checkOut;
-	   }
+	public void setCheckOut(Time checkOut) {
+		this.checkOut = checkOut;
+	}
 
-	   public String getCheckDate() {
-	      return checkDate;
-	   }
+	public Date getCheckDate() {
+		return checkDate;
+	}
 
-	   public void setCheckDate(String checkDate) {
-	      this.checkDate = checkDate;
-	   }
+	public void setCheckDate(Date checkDate) {
+		this.checkDate = checkDate;
+	}
 
-	   @Override
-	   public String toString() {
-	      return "CheckVO [checkIn=" + checkIn + ", checkOut=" + checkOut + ", checkDate=" + checkDate + "]";
-	   }
+	@Override
+	public String toString() {
+		return "CheckVO [checkIn=" + checkIn + ", checkOut=" + checkOut + ", checkDate=" + checkDate + "]";
+	}
 
 }

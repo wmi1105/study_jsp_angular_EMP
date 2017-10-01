@@ -2,6 +2,7 @@ package org.zerock.persistence;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -72,6 +73,12 @@ public class MemberDAOImpl implements MemberDAO {
 		session.update(namespace + ".checkOut", MID);
 	      return session.selectOne(namespace + ".checkOutTime", MID);
 	   }
+
+	@Override
+	public List<CheckVO> checkInfo(int MID) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace+".checkinfo", MID);
+	}
 
 
 

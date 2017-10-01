@@ -31,19 +31,23 @@
 <body>
    <div class="container">
       <div class="row main">
-         <div class="panel-heading">
+         <div style="width:100%; test-align: left;">
             <div class="panel-title text-center">
                <h1 class="title">Company Name</h1>
                <hr />
             </div>
          </div>
+         
+         <div>
+         <img src="${login.MIMG }"/>
+         </div>
+         
          <div class="main-login main-center">
               <input type='hidden' name="MPW" value="${login.MPW}">
              <div class="form-group">
-                  <label for="name" class="cols-sm-2 control-label">이름</label>
                   <div class="cols-sm-10">
                      <div class="input-group">
-                     <span class="input-group-addon"> </span>
+                     <span class="input-group-addon">사번 </span>
                         <input type="text" class="form-control"
                              value="${login.MID}" />
                      </div>
@@ -53,11 +57,9 @@
             
            
                <div class="form-group">
-                  <label for="name" class="cols-sm-2 control-label">이름</label>
                   <div class="cols-sm-10">
                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-user fa"
-                           aria-hidden="true"></i></span> <input type="text" class="form-control"
+                        <span class="input-group-addon">이름</span> <input type="text" class="form-control"
                            name="MNAME"  value="${login.MNAME}" />
                      </div>
                   </div>
@@ -66,55 +68,138 @@
             
 
                <div class="form-group">
-                  <label for="department" class="cols-sm-2 control-label">부서</label>
                   <div class="cols-sm-10">
                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-users fa"
-                           aria-hidden="true"></i></span> <input type="text" class="form-control"
+                        <span class="input-group-addon">부서</span> <input type="text" class="form-control"
                            name="MDP"  value="${login.MDP}" />
                      </div>
                   </div>
                </div>
 
                <div class="form-group">
-                  <label for="phone" class="cols-sm-2 control-label">연락처</label>
                   <div class="cols-sm-10">
                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-phone fa"
-                           aria-hidden="true"></i></span> <input type="text" class="form-control"
+                        <span class="input-group-addon">연락처</span> <input type="text" class="form-control"
                            name="MPHONE"  value="${login.MPHONE}" />
                      </div>
                   </div>
                </div>
 
                <div class="form-group">
-                  <label for="email" class="cols-sm-2 control-label">이메일</label>
                   <div class="cols-sm-10">
                      <div class="input-group">
-                        <span class="input-group-addon"><i
-                           class="fa fa-envelope fa" aria-hidden="true"></i></span> <input
+                        <span class="input-group-addon">이메일</span> <input
                            type="text" class="form-control" name="MMAIL"  value="${login.MMAIL}" />
                      </div>
                   </div>
                </div>
-               <div class="form-group ">
-                  <input type='file' name='MIMG'value="${login.MIMG}">
-               </div>
-               
           
-               <div class="form-group ">
+               <%-- <div class="form-group ">
                   <input type='text'name="checkIn" value="${check.checkIn }"/>
                </div>
                
               
                <div class="form-group ">
                   <input type='text'name="checkIn" value="${check.checkIn }"/>
-               </div>
-
-
-              
-           
+               </div> --%>
          </div>
+         
+         
+         
+         <!-- 출퇴근시간 -->
+			<div class="box">
+				<div class="box-body">
+					<table class="table table-bordered">
+						<tr>
+							<th>날짜</th>
+							<th>출근</th>
+							<th>퇴근</th>
+							<th>확인</th>
+						</tr>
+
+						<c:forEach items="${list}" var="checkVO">
+
+							<tr>
+								<td>${checkVO.checkDate}</td>
+								<%-- <td><a
+									href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.bno}'>
+										${boardVO.title} </a></td> --%>
+								<td>${checkVO.checkIn}</td>
+								<td>${checkVO.checkOut}</td>
+							</tr>
+
+						</c:forEach>
+
+					</table>
+				</div>
+				<!-- /.box-body -->
+<%-- 
+
+				<div class="box-footer">
+                  <div class="text-center">
+                  <ul class="pagination">
+
+                     <c:if test="${pageMaker.prev}">
+                        <li><a
+                           href="list${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
+                     </c:if>
+
+                     <c:forEach begin="${pageMaker.startPage }"
+                        end="${pageMaker.endPage }" var="idx">
+                        <li
+                           <c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
+                           <a href="list${pageMaker.makeSearch(idx)}">${idx}</a>
+                        </li>
+                     </c:forEach>
+
+                     <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+                        <li><a
+                           href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
+                     </c:if>
+
+                  </ul>
+               </div>
+ --%>
+					
+
+				</div>
+				<!-- /.box-footer-->
+			</div>
+		</div>
+		<!--/.col (left) -->
+
+	</div>
+	<!-- /.row -->
+</section>
+<!-- /.content -->
+</div>
+
+<script>
+	
+	$(document).ready(
+			function() {
+
+				$('#searchBtn').on(
+						"click",
+						function(event) {
+
+							self.location = "list"
+									+ '${pageMaker.makeQuery(1)}'
+									+ "&searchType="
+									+ $("select option:selected").val()
+									+ "&keyword=" + $('#keywordInput').val();
+
+						});
+
+				$('#newBtn').on("click", function(evt) {
+
+					self.location = "register";
+
+				});
+
+			});
+</script>
+         
       </div>
       
    </div>

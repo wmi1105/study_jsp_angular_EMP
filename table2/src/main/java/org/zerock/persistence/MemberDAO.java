@@ -1,6 +1,7 @@
 package org.zerock.persistence;
 
 import java.util.Date;
+import java.util.List;
 
 import org.zerock.domain.CheckVO;
 import org.zerock.domain.MemberVO;
@@ -22,5 +23,5 @@ public interface MemberDAO {
 	
 	public CheckVO checkOut(int MID) throws Exception;
 	
-	
+	public List<CheckVO> checkInfo(int MID) throws Exception;
 }
