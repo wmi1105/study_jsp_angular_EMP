@@ -50,9 +50,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/include/memberinfo">내정보</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
+          
           </ul>
         </div>
       </div>
@@ -66,6 +64,7 @@
 	        
 	    <ul><input type="text" name="MID" id="MID" placeholder="Id" style="background-color:#D8D8D8;"/></ul>
         <ul><input type="password" name="MPW" id="MPW" placeholder="Password" style="background-color:#D8D8D8;"/></ul>
+             <a><input type="checkbox" name="useCookie">Remember</a>
         <ul><button type="submit" class="btn btn-primary btn-block btn-flat" >Login</button></ul>
 	        </form>
 	        <ul> <a href="/include/mregister">등록하기</a></ul>

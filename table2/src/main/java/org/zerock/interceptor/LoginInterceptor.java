@@ -1,5 +1,6 @@
 package org.zerock.interceptor;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -27,6 +28,14 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		if(memberVO != null){
 			logger.info("new login success");
 			session.setAttribute(LOGIN, memberVO);
+			
+			if(request.getParameter("useCookie") !=null){
+				logger.info("Remember");
+				Cookie loginCookie = new Cookie("loginCookie", session.getId());
+				loginCookie.setPath("/");
+				loginCookie.setMaxAge(60*60*24*7);
+				response.addCookie(loginCookie);
+			}
 			//response.sendRedirect("/");
 			
 			//사용자가 가려고 한 페이지 로그인 후 이동 
