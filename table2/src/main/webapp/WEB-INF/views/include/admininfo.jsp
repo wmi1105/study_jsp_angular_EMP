@@ -39,24 +39,25 @@
 					<table class="table table-bordered">
 						<tr>
 						    <th>사번</th>
-							<th>날짜</th>
-							<th>출근</th>
-							<th>퇴근</th>
-							<th>확인</th>
+						    <th>이름</th>
+							<th>부서</th>
+							<th>비고</th>
+							<!-- <th>퇴근</th>
+							<th>확인</th> -->
 						</tr>
 
 
-						<c:forEach items="${list}" var="checkVO">
+						<c:forEach items="${list}" var="memberVO">
 
 							<tr>
 						
-							
-								<td>${checkVO.checkDate}</td>
+								<td><a href="/include/adminMemberInfo?MID=${memberVO.MID}">${memberVO.MID}</a></td>
+								<td>${memberVO.MNAME}</td>
 								<%-- <td><a
 									href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.bno}'>
 										${boardVO.title} </a></td> --%>
-								<td>${checkVO.checkIn}</td>
-								<td>${checkVO.checkOut}</td>
+								<td>${memberVO.MDP}</td>
+								<td></td>
 							</tr>
 
 						</c:forEach>

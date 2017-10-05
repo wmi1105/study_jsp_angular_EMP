@@ -72,7 +72,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public List<CheckVO> listAll() throws Exception {
+	public List<MemberVO> listAll() throws Exception {
 		// TODO Auto-generated method stub
 		 return dao.listAll();
 	}

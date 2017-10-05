@@ -47,7 +47,7 @@
              <div class="form-group">
                   <div class="cols-sm-10">
                      <div class="input-group">
-                     <span class="input-group-addon">사번 </span>
+                     <span class="input-group-addon">사&nbsp; 번 </span>
                         <input type="text" class="form-control"
                              value="${login.MID}" />
                      </div>
@@ -59,7 +59,7 @@
                <div class="form-group">
                   <div class="cols-sm-10">
                      <div class="input-group">
-                        <span class="input-group-addon">이름</span> <input type="text" class="form-control"
+                        <span class="input-group-addon">이&nbsp; 름</span> <input type="text" class="form-control"
                            name="MNAME"  value="${login.MNAME}" />
                      </div>
                   </div>
@@ -70,7 +70,7 @@
                <div class="form-group">
                   <div class="cols-sm-10">
                      <div class="input-group">
-                        <span class="input-group-addon">부서</span> <input type="text" class="form-control"
+                        <span class="input-group-addon">부&nbsp; 서</span> <input type="text" class="form-control"
                            name="MDP"  value="${login.MDP}" />
                      </div>
                   </div>
@@ -127,6 +127,7 @@
 										${boardVO.title} </a></td> --%>
 								<td>${checkVO.checkIn}</td>
 								<td>${checkVO.checkOut}</td>
+								<td></td>
 							</tr>
 
 						</c:forEach>

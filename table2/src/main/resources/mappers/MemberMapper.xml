@@ -61,14 +61,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	]]>
 	</select>
 	
-	 <select id="listAll" resultType="CheckVO">
+	 <select id="listAll" resultType="MemberVO">
  <![CDATA[
  select 
-   mid, checkin, checkout, checkdate 
+   mid,mname, mdp
  from 
-   tbl_check 
- where mid>999
- order by mid desc, checkin desc
+   tbl_member
+ where tbl_member.mid>999
  ]]>  
  </select>
  

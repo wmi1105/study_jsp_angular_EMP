@@ -58,8 +58,13 @@
 	        
 	    <ul><input type="text" name="MID" id="MID" placeholder="Id" style="background-color:#D8D8D8;"/></ul>
         <ul><input type="password" name="MPW" id="MPW" placeholder="Password" style="background-color:#D8D8D8;"/></ul>
+        <hr class="intro-divider">
              <a><input type="checkbox" name="useCookie">Remember</a>
-        <ul><button type="submit" class="btn btn-primary btn-block btn-flat" >Login</button></ul>
+             <ul class="list-inline intro-social-buttons">
+             <li class="list-inline-item">
+              <button type="submit" class="btn btn-primary btn-block btn-flat" >Login</button>
+            </li>
+            </ul>
 	        </form>
 	        
 	          

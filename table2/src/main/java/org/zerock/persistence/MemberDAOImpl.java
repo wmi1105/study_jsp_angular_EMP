@@ -81,7 +81,7 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public List<CheckVO> listAll() throws Exception {
+	public List<MemberVO> listAll() throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectList(namespace + ".listAll");
 	}
