@@ -60,6 +60,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select mid, checkin, checkout, checkdate from tbl_check where mid = #{MID}
 	]]>
 	</select>
+	
+	 <select id="listAll" resultType="CheckVO">
+ <![CDATA[
+ select 
+   mid, checkin, checkout, checkdate 
+ from 
+   tbl_check 
+ where mid>999
+ order by mid desc, checkin desc
+ ]]>  
+ </select>
+ 
+ 
 
 
 </mapper>

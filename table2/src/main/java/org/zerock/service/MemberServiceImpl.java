@@ -70,6 +70,15 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		return dao.checkInfo(MID);
 	}
+
+	@Override
+	public List<CheckVO> listAll() throws Exception {
+		// TODO Auto-generated method stub
+		 return dao.listAll();
+	}
+
+	
+
 	
 	
 }

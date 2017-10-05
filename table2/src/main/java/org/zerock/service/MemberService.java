@@ -24,4 +24,7 @@ public interface MemberService {
     public CheckVO checkOut(int MID) throws Exception;
     
     public List<CheckVO> checkInfo(int MID) throws Exception;
+    
+    public List<CheckVO> listAll() throws Exception;
+
 }

@@ -29,6 +29,8 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 			logger.info("new login success");
 			session.setAttribute(LOGIN, memberVO);
 			
+		
+			
 			if(request.getParameter("useCookie") !=null){
 				logger.info("Remember");
 				Cookie loginCookie = new Cookie("loginCookie", session.getId());

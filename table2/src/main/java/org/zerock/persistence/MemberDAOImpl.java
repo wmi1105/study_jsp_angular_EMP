@@ -80,6 +80,13 @@ public class MemberDAOImpl implements MemberDAO {
 		return session.selectList(namespace+".checkinfo", MID);
 	}
 
+	@Override
+	public List<CheckVO> listAll() throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace + ".listAll");
+	}
+
+
 
 
 	

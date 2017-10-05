@@ -21,14 +21,7 @@
     <script src="/resources/vendor/jquery/jquery.min.js"></script>
 <title>main page</title>
 
-  <script>
-	var result = '${msg}';
-
-	if (result == 'SUCCESS') {
-		alert("아이디는: [${giveId}] 입니다.");
-	}
-</script>
-
+ 
 
 </head>
 
@@ -48,11 +41,9 @@
               <a class="nav-link" href="/sboard/list">글쓰기</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/include/memberinfo">내정보</a>
+              <a class="nav-link" href="/include/admininfo">멤버 출퇴근관리</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/include/adminlogin">관리자 로그인</a>
-            </li>
+         
           
           </ul>
         </div>
@@ -60,7 +51,7 @@
     </nav>
 
     <!-- Header -->
-      <form action="/include/loginPost" method="post">
+      <form action="/include/adminlogin" method="post">
     <header class="intro-header">
       <div class="container">
         <div class="intro-message">
@@ -70,7 +61,7 @@
              <a><input type="checkbox" name="useCookie">Remember</a>
         <ul><button type="submit" class="btn btn-primary btn-block btn-flat" >Login</button></ul>
 	        </form>
-	        <ul> <a href="/include/mregister">등록하기</a></ul>
+	        
 	          
 	       
           <!-- <h1>Landing Page</h1>

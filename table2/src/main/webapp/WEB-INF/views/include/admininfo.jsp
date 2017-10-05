@@ -30,80 +30,7 @@
 </head>
 <body>
    <div class="container">
-      <div class="row main">
-         <div style="width:100%; test-align: left;">
-            <div class="panel-title text-center">
-               <h1 class="title">Company Name</h1>
-               <hr />
-            </div>
-         </div>
-         
-         <div>
-         <img src="${login.MIMG }"/>
-         </div>
-         
-         <div class="main-login main-center">
-              <input type='hidden' name="MPW" value="${login.MPW}">
-             <div class="form-group">
-                  <div class="cols-sm-10">
-                     <div class="input-group">
-                     <span class="input-group-addon">사번 </span>
-                        <input type="text" class="form-control"
-                             value="${login.MID}" />
-                     </div>
-                  </div>
-               </div>
-        
-            
-           
-               <div class="form-group">
-                  <div class="cols-sm-10">
-                     <div class="input-group">
-                        <span class="input-group-addon">이름</span> <input type="text" class="form-control"
-                           name="MNAME"  value="${login.MNAME}" />
-                     </div>
-                  </div>
-               </div>
-
-            
-
-               <div class="form-group">
-                  <div class="cols-sm-10">
-                     <div class="input-group">
-                        <span class="input-group-addon">부서</span> <input type="text" class="form-control"
-                           name="MDP"  value="${login.MDP}" />
-                     </div>
-                  </div>
-               </div>
-
-               <div class="form-group">
-                  <div class="cols-sm-10">
-                     <div class="input-group">
-                        <span class="input-group-addon">연락처</span> <input type="text" class="form-control"
-                           name="MPHONE"  value="${login.MPHONE}" />
-                     </div>
-                  </div>
-               </div>
-
-               <div class="form-group">
-                  <div class="cols-sm-10">
-                     <div class="input-group">
-                        <span class="input-group-addon">이메일</span> <input
-                           type="text" class="form-control" name="MMAIL"  value="${login.MMAIL}" />
-                     </div>
-                  </div>
-               </div>
-          
-               <%-- <div class="form-group ">
-                  <input type='text'name="checkIn" value="${check.checkIn }"/>
-               </div>
-               
-              
-               <div class="form-group ">
-                  <input type='text'name="checkIn" value="${check.checkIn }"/>
-               </div> --%>
-         </div>
-         
+      
          
          
          <!-- 출퇴근시간 -->
@@ -111,17 +38,20 @@
 				<div class="box-body">
 					<table class="table table-bordered">
 						<tr>
+						    <th>사번</th>
 							<th>날짜</th>
 							<th>출근</th>
 							<th>퇴근</th>
 							<th>확인</th>
 						</tr>
 
+
 						<c:forEach items="${list}" var="checkVO">
 
 							<tr>
+						
 							
-							<td>${checkVO.checkDate}</td>
+								<td>${checkVO.checkDate}</td>
 								<%-- <td><a
 									href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardVO.bno}'>
 										${boardVO.title} </a></td> --%>
